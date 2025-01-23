@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&family=Alumni+Sans+Collegiate+One:ital@0;1&family=Anton&family=Finger+Paint&family=Freckle+Face&family=Kumar+One+Outline&family=Londrina+Shadow&family=Mouse+Memoirs&family=Nova+Square&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik+Distressed&family=Rubik+Spray+Paint&family=Rubik+Wet+Paint&family=Sigmar&family=Vast+Shadow&family=Ysabeau+SC:wght@1..1000&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    background-color: #000000;
+    overflow-x: hidden;
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+.leaf {
+    width: 10px;
+    height: 20px;
+    position: fixed;
+    z-index: 9999999999;
+    opacity: 1;
+    pointer-events: none;
+    animation: fallAndSpin 6s ease-out forwards;
+    transform-origin: center;
+}
+
+@keyframes fallAndSpin {
+    0% {
+        transform: translateY(-100px) rotate(-310deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+#preloader1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #333333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999999;
+}
+
+.rocket-video {
+    width: 900px;
+    height: auto;
+}
+
+#preloader {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+#tv {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/019/785/898/small_2x/vintage-wooden-tv-receiver-with-green-screen-isolated-on-black-background-video.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 20000px;
+    transform: scale(.6);
+}
+
+.tv-frame {
+    position: relative;
+    width: 490px;
+    height: 330px;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 16%;
+    position: absolute;
+    top: 57%;
+    left: 44%;
+    transform: translate(-50%, -50%);
+    box-shadow: 5px 2px 9px 15px rgba(133, 131, 131, 0.5);
+}
+
+.screen {
+    position: absolute;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.nav {
+    margin-top: 5px;
+    height: 10vh;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 9;
+    padding-left: 100px;
+    overflow: hidden;
+}
+
+.pw h1 {
+    height: 90%;
+    width: 100px;
+    font-size: 3.6rem;
+    text-align: center;
+    position: relative;
+    color: #0000007e;
+    z-index: 1;
+}
+
+.pw h1::before {
+    content: "PW";
+    position: absolute;
+    color: #0000007e;
+    left: -.001px;
+    top: -.1px;
+    z-index: -1;
+    -webkit-text-stroke: 3px rgb(4, 0, 255);
+}
+
+.nav img {
+    height: 150%;
+    width: auto;
+    object-fit: cover;
+}
+
+.box {
+    height: 100vh;
+    width: 100vw;
+}
+
+video {
+    margin-top: 154px;
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    background-color: rgba(36, 35, 35, 0);
+    position: relative;
+    z-index: 99999;
+}
+
+.vidin {
+    height: 54%;
+    width: 30%;
+    position: absolute;
+    z-index: 9;
+    top: 420px;
+    left: 540px;
+    border-radius: 20px;
+}
+
+.cursor {
+    width: 44px;
+    height: 45px;
+    text-align: center;
+    background-color: rgb(24, 23, 23);
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    background-image: url(/pw-screen2.png);
+    background-size: cover;
+    background-position: center center;
+    align-items: center;
+    z-index: 9999999;
+    font-size: 1.5rem;
+    color: #000000;
+    font-weight: 800;
+    overflow: hidden;
+    background-position: center;
+}
+
+.mar {
+    position: relative;
+}
+
+.mar marquee {
+    height: 15vh;
+    width: 100vw;
+    font-size: 5rem;
+    color: rgb(0, 0, 0);
+    font-family: "Londrina Shadow", serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+    position: absolute;
+    z-index: 999;
+}
+
+.mar marquee span {
+    height: 100%;
+    width: 100%;
+    color: rgb(243, 219, 0);
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+.cursorblur {
+    filter: blur(30px);
+    position: fixed;
+    height: 90px;
+    width: 90px;
+    border-radius: 50%;
+    z-index: 99;
+    background: linear-gradient(to bottom, #ff5e00 33%, #ffffff 33%, #ffffff 66%, #15ff00 66%, #138808 100%);
+    -webkit-filter: blur(30px);
+}
+
+.threeimg {
+    height: 40vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    padding: 60px;
+}
+
+.img8 {
+    height: 130%;
+    width: 40%;
+    border-radius: 20px;
+    background-size: cover;
+    position: relative;
+    z-index: 99;
+}
+
+#img8 {
+    background-image: url(https://www.uni.lu/wp-content/uploads/sites/5/2023/11/Open-Doors-Aerial-Robotics-Lab.png);
+}
+
+#img9 {
+    background-image: url(/Screenshot\ 2025-01-11\ 181139.png);
+}
+
+#img10 {
+    background-image: url(/Screenshot\ 2025-01-11\ 182454.png);
+}
+
+.page5 {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(https://img.freepik.com/free-vector/black-background-with-focus-spot-light_1017-27230.jpg);
+    background-size: cover;
+    cursor: pointer;
+}
+
+.page5 span {
+    line-height: 1.3;
+    height: 70%;
+    width: 80%;
+    font-size: 5rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: "Londrina Shadow", serif;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 999999;
+}
+
+.page5 #colon1 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 7%;
+    cursor: pointer;
+}
+
+.page5 #colon2 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+    top: 199%;
+    left: 80%;
+    cursor: pointer;
+}
+
+.page6 {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    z-index: 999999;
+}
+
+.st-con {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 50px;
+    border-bottom: 1.2px solid white;
+    cursor: pointer;
+    transition: all .1s linear infinite 1s;
+}
+
+.st-con h2 {
+    font-size: 2.1rem;
+    font-family: "Ysabeau SC", serif;
+    font-weight: 900;
+}
+
+.st-con h2:hover {
+    color: rgb(73, 72, 72);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(65, 63, 64), rgb(0, 0, 0));
+}
+
+.largemain {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.large1 {
+    position: relative;
+    z-index: 99999999;
+    height: 80vh;
+    width: 35vw;
+    overflow: hidden;
+}
+
+.large1 img {
+    position: relative;
+    z-index: 999999999;
+    height: 80vh;
+    width: 35vw;
+}
+
+.large2 {
+    position: relative;
+    z-index: 9999999;
+    height: 80vh;
+    width: 35vw;
+    overflow: hidden;
+}
+
+.large2 img {
+    position: relative;
+    z-index: 99999999;
+    height: 80vh;
+    width: 35vw;
+    background-position: center center;
+}
+
+.arow {
+    position: relative;
+    z-index: 999999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#feaiures {
+    padding: 10px 50px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: "Rubik Wet Paint", serif;
+    font-size: 3.2rem;
+    font-weight: 500;
+    -webkit-text-stroke: 2px rgb(80, 74, 74);
+}
+
+#feaiures:hover {
+    color: rgb(54, 53, 53);
+    background: linear-gradient(to right, rgb(0, 0, 0), rgb(65, 63, 64), rgb(0, 0, 0));
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.center {
+    position: relative;
+    height: 80%;
+    width: 80%;
+}
+
+.img-con {
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 0%;
+    background-color: yellow;
+}
+
+.img-con img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.page7 {
+    width: 100vw;
+}
+
+.text7 {
+    position: relative;
+    z-index: 999999;
+}
+
+.text7 img {
+    height: 100%;
+    width: 100%;
+}
+
+.mainmain {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999999;
+}
+
+.center {
+    height: 78%;
+    width: 80%;
+}
+
+.center h1 {
+    font-family: "Rubik Distressed", serif;
+    font-size: 4rem;
+    font-weight: 500;
+    color: transparent;
+    text-shadow: 0 0 5px rgb(0, 0, 0);
+    text-align: center;
+    text-transform: uppercase;
+    line-height: 1.5;
+    background: linear-gradient(to right, rgb(255, 208, 0), rgb(212, 0, 255), rgb(214, 90, 8));
+    -webkit-background-clip: text;
+}
+
+.imgdiv {
+    position: absolute;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.imgdiv img {
+    transform: translateY(100%);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#school {
+    font-family: "Rubik Wet Paint", serif;
+    color: rgb(180, 176, 176);
+    font-weight: 800;
+}
+
+.page8 {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 0, 0);
+    position: relative;
+    z-index: 999999;
+}
+
+body {
+    margin: 0;
+}
+
+canvas {
+    display: block;
+}
